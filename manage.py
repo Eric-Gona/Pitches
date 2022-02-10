@@ -1,7 +1,10 @@
+from flask import appcontext_popped
 from flask_script import Manager, Server
 from flask_migrate import Migrate
 from app.models import User
-from app.templates import create_app,db
+from app.templates import create_app
+from flask_sqlalchemy import SQLAlchemy
+db = SQLAlchemy(appcontext_popped)
 
 app = create_app('production')
 

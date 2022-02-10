@@ -1,7 +1,8 @@
-from app import db,login_manager
+from app import login_manager
 from datetime import datetime
 from flask_login import UserMixin,current_user
 from werkzeug.security import generate_password_hash,check_password_hash
+from app.models import db 
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
